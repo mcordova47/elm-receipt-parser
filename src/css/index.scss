@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+
+body {
+  font-family: Roboto;
+  color: rgba(0,0,0,.76);
+}
+
+#file-upload {
+  display: none;
+}
+
+label[for="file-upload"] i {
+  cursor: pointer;
+  color: gray;
+  float: left;
+}
+
+.container {
+  margin: auto;
+  width: 500px;
+}
+
+.file-upload-text {
+  display: inline-block;
+  font-weight: bold;
+  float: left;
+  margin-top: 2px;
+}
+
+.progress-info {
+  float: right;
+  width: 300px;
+}
+
+.progress-bar {
+  background-color: #b4cef4;
+  height: 5px;
+  width: 100%;
+  float: left;
+}
+
+.status-indicator {
+  color: #868686;
+  font-size: 12px;
+  float: left;
+}
+
+.progress {
+  background-color: #3f8aef;
+  height: 100%;
+}
+
+.result-box {
+  float: left;
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 2px;
+  max-height: 500px;
+  width: 100%;
+  overflow: auto;
+  margin-top: 10px;
+}
