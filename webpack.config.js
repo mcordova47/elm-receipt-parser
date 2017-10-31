@@ -45,7 +45,7 @@ const common = {
       {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
-        use: ['elm-hot-loader', 'elm-webpack-loader?verbose=true&warn=true&debug=true']
+        use: ['elm-hot-loader', 'elm-webpack-loader?verbose=true&warn=true']
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -64,7 +64,7 @@ const common = {
     new CleanWebpackPlugin(['dist']),
 
     new HtmlWebpackPlugin({
-      title: 'elm-ocr',
+      title: 'elm-receipt-parser',
       template: 'src/index.html'
     }),
 

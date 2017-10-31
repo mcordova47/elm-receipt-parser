@@ -64,7 +64,8 @@ update msg model =
         UpdateProgress value ->
             let
                 progress =
-                    Decode.decodeValue progressDecoder value
+                    value
+                        |> Decode.decodeValue progressDecoder
                         |> Result.toMaybe
             in
                 ( { model | progress = progress }, Cmd.none )
@@ -72,7 +73,8 @@ update msg model =
         ReceiveText value ->
             let
                 text =
-                    Decode.decodeValue textResultDecoder value
+                    value
+                        |> Decode.decodeValue textResultDecoder
                         |> Result.toMaybe
 
                 products =
@@ -169,18 +171,21 @@ progressWidth progress =
 -- SUBSCRIPTIONS
 
 
+progressDecoder : Decode.Decoder Progress
 progressDecoder =
     Pipeline.decode Progress
         |> Pipeline.required "status" Decode.string
         |> Pipeline.required "progress" Decode.float
 
 
+textResultDecoder : Decode.Decoder TextResult
 textResultDecoder =
     Pipeline.decode TextResult
         |> Pipeline.required "text" Decode.string
         |> Pipeline.required "lines" (Decode.list lineDecoder)
 
 
+lineDecoder : Decode.Decoder String
 lineDecoder =
     Decode.at ["text"] Decode.string
 
