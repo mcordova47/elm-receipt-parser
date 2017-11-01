@@ -90,7 +90,8 @@ getProducts text =
             []
 
         Just { lines } ->
-            List.map Receipt.parseProduct lines
+            lines
+                |> List.map Receipt.parseProduct
                 |> List.filterMap identity
 
 
