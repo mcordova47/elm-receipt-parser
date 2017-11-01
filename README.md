@@ -1,5 +1,5 @@
 
-# elm-ocr
+# elm-receipt-parser
 
 ## Development
 
